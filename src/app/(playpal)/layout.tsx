@@ -4,6 +4,8 @@ import '@/libs/styles/globals.css'
 import Navbar from '@/components/layouts/Navbar'
 import { ThemeProvider } from '@/libs/providers/ThemeProvider'
 import Sidebar from '@/components/layouts/Sidebar'
+import LoginModal from '@/components/modals/LoginModal'
+import RegisterModal from '@/components/modals/RegisterModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +28,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <LoginModal />
+            <RegisterModal />
             <Navbar />
             {children}
           </ThemeProvider>
