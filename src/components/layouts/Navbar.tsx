@@ -1,14 +1,14 @@
 "use client"
-import Link from 'next/link'
 import React from 'react'
 import { ToggleMode } from '../ToggleMode'
 import { Button } from '../ui/button'
-import { Menu } from 'lucide-react';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu';
 import { cn } from '@/libs/utils';
 import Logo from '../ui/Logo'
+import useLoginModal from '@/libs/hooks/useLoginModal';
 
 const Navbar = () => {
+    const loginModal = useLoginModal();
     let session = false;
 
   return (
@@ -73,7 +73,7 @@ const Navbar = () => {
             :
             (
                 <>
-                    <Button>Login</Button>
+                    <Button onClick={loginModal.onOpen}>Login</Button>
                 </>
             )
         }
